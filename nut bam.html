@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 8</title>
+  <style>
+    :root{
+      --transition-effect: 0.2s cubic-bezier(.34,-0.69,.71,1.38);/* chỉnh tốc độ khi bấm nút*/
+    }
+    #nutbam{
+
+      min-height: 30vh; /* chỉnh nút ở giữa hoặc gần giữa*/
+    }
+    .switch-toggle{/* Chỉnh khung có độ dài 90px và cao 50px*/
+      width: 90px;
+      height: 50px;
+      appearance: none;/* Xóa phần đánh dấu tích*/
+      background: cornflowerblue;
+      border-radius: 30px;/* Bo viền góc hình chữ nhật*/
+      position: relative;/* Chỉnh phần quan trọng*/
+      cursor: pointer;/* Hiển thị dấu bàn tay khi chỉ vào nút*/
+      box-shadow: inset 0px 0px 16px rgba(0,0,0, .3);/* Bóng mờ bên trong khi sử dụng inset*/
+      transition: var(--transition-effect);
+    }
+    .switch-toggle::before{/* Tạo một hình vuông bên trên hình chữ nhật để tạo hình tròn*/
+      content: "";/*Nội dung bên trong*/
+      width: 44px;/* Hình vuông có chiều dài và cao 44px*/
+      height: 44px;
+      top: 3px;/* cách bên trên 3px và bên dưới 3px*/
+      left: 3px;
+      position: absolute;
+      background: coral;
+      border-radius: 50%;/* Biến hình vuông thành hình tròn*/
+      box-shadow: 0px 0px 6px rgba(0,0,0, .3);
+transition: var(--transition-effect);
+    }
+    .switch-toggle:checked{/* Khi bấm vào hình chữ nhật thì chuyển màu*/
+      background: deepskyblue;
+    }
+    .switch-toggle:checked:before{/*Khi bấm vào hình tròn thì di chuyển 40px*/
+      left: 40px;
+    }
+    label{
+      font-size: 60px;
+    }
+  </style>
+</head>
+<body>
+<div id="nutbam">
+  <input type="checkbox" class="switch-toggle" ><label> Good </label><br>
+  <input type="checkbox" class="switch-toggle" ><label> Fast </label><br>
+  <input type="checkbox" class="switch-toggle" ><label> Cheap </label><br>
+</div>
+</body>
+</html>
